@@ -79,6 +79,10 @@ texture = ExtResource("2_nup0s")
 y_sort_enabled = true
 position = Vector2(208.024, -128.355)
 
+[node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
+position = Vector2(1252.98, 396.355)
+dialogs = [" I look at you and think, \"Two billion years of evolution, for this?\"", "You are the human version of cramps.", "Let me tell you. If I don’t answer you the first time, what makes you think the next 25 will work?", "Careful, bug — I could sneeze and end your entire bloodline.", "They call me horsepower. You? Pest control bait."]
+
 [node name="Jorgito" parent="level" instance=ExtResource("5_4a05x")]
 position = Vector2(5742.98, 805.355)
 character_name = "Jorgito"
@@ -160,10 +164,6 @@ position = Vector2(-574.024, 1210.35)
 
 [node name="grass16" parent="level" instance=ExtResource("10_jncih")]
 position = Vector2(-273.024, 3129.35)
-
-[node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
-position = Vector2(1325.98, 372.355)
-dialogs = ["Hello", "heloo2"]
 
 [node name="enemy" parent="level" instance=ExtResource("13_qiguf")]
 position = Vector2(2791.98, 1186.35)

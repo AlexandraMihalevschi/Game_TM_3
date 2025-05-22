@@ -7,19 +7,22 @@ text Quest.process() returns
 """
 
 var active = false
-
-@export var character_name: String = "Nameless NPC"
+@export var character_name: String = "Brutal Horse"
 @export var dialogs = ["..."] # (Array, String, MULTILINE)
 var current_dialog = 0
+
+# Reference to the interaction prompt (if you have one)
+@onready var interaction_prompt = $InteractionPrompt
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	# warning-ignore:return_value_discarded
 	body_entered.connect(_on_body_entered)
-	# warning-ignore:return_value_discarded
 	body_exited.connect(_on_body_exited)
-	pass # Replace with function body.
+	
+	# Hide interaction prompt initially if it exists
+	if interaction_prompt:
+		interaction_prompt.hide()
 
 func _input(event):
 	# Bail if npc not active (player not inside the collider)
@@ -48,7 +51,13 @@ func _input(event):
 func _on_body_entered(body):
 	if body is Player:
 		active = true
+		# Show interaction prompt if it exists
+		if interaction_prompt:
+			interaction_prompt.show()
 		
 func _on_body_exited(body):
 	if body is Player:
 		active = false
+		# Hide interaction prompt if it exists
+		if interaction_prompt:
+			interaction_prompt.hide()

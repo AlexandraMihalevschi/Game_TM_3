@@ -57,7 +57,6 @@ character_name = "Jorgito"
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("14")]
 quest_name = "Life as a Delivery Guy"
 required_amount = 3
-reward_item = "Ant Skull"
 initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
