@@ -31,12 +31,7 @@ func _input(event):
 			update_all_displays()
 			print("Menu opened")  # Debug
 	
-<<<<<<< HEAD
-	# Explicit check for C key (not just "craft" action)
-	if enabled and ((event is InputEventKey and event.keycode == KEY_C)):
-		print("C key pressed")  # Debug
-		attempt_crafting()
-=======
+
 	# Check for number key presses when enabled
 	if enabled and event is InputEventKey and event.pressed:
 		var key = event.keycode
@@ -44,7 +39,6 @@ func _input(event):
 		if key >= KEY_0 and key <= KEY_9:
 			var number = key - KEY_0  # Convert keycode to actual number
 			attempt_crafting_by_number(number)
->>>>>>> stefan
 
 func update_all_displays():
 	update_quest_listing()
