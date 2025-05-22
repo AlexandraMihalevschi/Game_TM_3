@@ -4,10 +4,16 @@ var enabled = false
 
 # Crafting recipes
 var crafting_recipes = {
-	"Wooden Sword": {"Wood": 0, "Iron": 0},
+	"Wooden Sword": {"Wood": 1, "Iron": 1},
 	"Health Potion": {"Herb": 3, "Water": 1},
 	"Iron Armor": {"Iron": 5, "Leather": 2},
+	"Iron Sword": {"Wood": 2, "Iron": 5},
+	"Advanced health Potion": {"Herb": 5, "Water": 2},
+	"Advanced Magic Sword": {"Herb": 4, "Iron":6, "Leather":5, "Ant Skull": 1}
 }
+
+var numbered_recipes = {}  # Will store the numbered recipes for reference
+var last_displayed_recipes = {}  # To keep track of what was last displayed
 
 func _ready():
 	Globals.save_game()
@@ -25,31 +31,29 @@ func _input(event):
 			update_all_displays()
 			print("Menu opened")  # Debug
 	
-	# Explicit check for C key (not just "craft" action)
-	if enabled and (event.is_action_pressed("craft") or (event is InputEventKey and event.keycode == KEY_C)):
-		print("C key pressed")  # Debug
-		attempt_crafting()
+	# Check for number key presses when enabled
+	if enabled and event is InputEventKey and event.pressed:
+		var key = event.keycode
+		# Check if it's a number key (0-9)
+		if key >= KEY_0 and key <= KEY_9:
+			var number = key - KEY_0  # Convert keycode to actual number
+			attempt_crafting_by_number(number)
 
 func update_all_displays():
 	update_quest_listing()
 	update_item_listing()
 	update_crafting_listing()
 
-func attempt_crafting():
-	print("Attempting to craft...")  # Debug
-	var craftable_item = get_first_craftable_item()
+func attempt_crafting_by_number(number: int):
+	print("Attempting to craft item number: ", number)
 	
-	if craftable_item:
-		print("Found craftable item: ", craftable_item)  # Debug
-		craft_item(craftable_item)
+	# Check if this number exists in our numbered recipes
+	if numbered_recipes.has(number):
+		var item_name = numbered_recipes[number]
+		print("Found item to craft: ", item_name)
+		craft_item(item_name)
 	else:
-		print("No craftable items found")  # Debug
-		# Print inventory for debugging
-		print("Current inventory: ", Inventory.list())
-		# Print required materials for debugging
-		for recipe in crafting_recipes:
-			print("Recipe ", recipe, " requires: ", crafting_recipes[recipe])
-
+		print("No item with number ", number)
 
 func update_quest_listing():
 	var text = "Started:\n"
@@ -73,13 +77,17 @@ func update_item_listing():
 	$VBoxContainer/HBoxContainer/Inventory/Details.text = text
 
 func update_crafting_listing():
-	var text = "Available Recipes:\n\n"
+	var text = "Available Recipes (press number to craft):\n\n"
 	var inventory = Inventory.list()
+	
+	# Clear the numbered recipes before rebuilding
+	numbered_recipes.clear()
+	var current_number = 1  # Start numbering from 1
 	
 	for recipe_name in crafting_recipes:
 		var recipe = crafting_recipes[recipe_name]
 		var can_craft = true
-		var recipe_text = recipe_name + ":\n"
+		var recipe_text = "%d. %s:\n" % [current_number, recipe_name]
 		
 		# Check materials
 		for material in recipe:
@@ -94,9 +102,14 @@ func update_crafting_listing():
 		
 		recipe_text += "  [CRAFTABLE]\n" if can_craft else "  [MISSING MATERIALS]\n"
 		text += recipe_text + "\n"
+		
+		# Store this recipe with its number if it's craftable
+		if can_craft:
+			numbered_recipes[current_number] = recipe_name
+		
+		current_number += 1
 	
-	$VBoxContainer/HBoxContainer/Crafting/Details.text = text
-
+	$VBoxContainer/HBoxContainer/ScrollContainer/Details.text = text
 
 func craft_item(item_name: String):
 	print("Trying to craft: ", item_name)  # Debug

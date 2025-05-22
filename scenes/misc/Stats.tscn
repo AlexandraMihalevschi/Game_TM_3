@@ -7,10 +7,12 @@
 
 [node name="Stats" type="PanelContainer"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996581, 1.00005)
 focus_neighbor_top = NodePath("VBoxContainer/Exit")
 focus_neighbor_bottom = NodePath("VBoxContainer/Exit")
 focus_mode = 2
@@ -74,23 +76,22 @@ theme_override_fonts/font = ExtResource("3")
 text = "Item 1
 "
 
-[node name="Crafting" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+localize_numeral_system = false
 
-[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer/Crafting"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2")
-text = "Inventory"
-horizontal_alignment = 1
-
-[node name="Details" type="Label" parent="VBoxContainer/HBoxContainer/Crafting"]
+[node name="Details" type="Label" parent="VBoxContainer/HBoxContainer/ScrollContainer"]
+show_behind_parent = true
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 0
 theme_override_fonts/font = ExtResource("3")
 text = "Item 1
 "
+clip_text = true
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
