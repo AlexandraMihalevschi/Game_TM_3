@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3gcaj4vrpbko"]
+[gd_scene load_steps=18 format=3 uid="uid://c3gcaj4vrpbko"]
 
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="1_kg1ln"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="1_ufusx"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="13_qiguf"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="14_qv2ha"]
 [ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="15_2dvme"]
+[ext_resource type="PackedScene" uid="uid://dihndxp8ccslm" path="res://scenes/characters/BrutalHorse.tscn" id="17_fw7j0"]
 
 [node name="Outside2" type="Node"]
 
@@ -24,57 +25,62 @@ position = Vector2(806, 156.25)
 scale = Vector2(1, 0.524176)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_small" type="Sprite2D" parent="."]
-position = Vector2(1200, 452)
-scale = Vector2(0.864656, 0.489121)
+[node name="puddle_small2" type="Sprite2D" parent="puddle_big"]
+position = Vector2(1702, 4419.79)
+scale = Vector2(2.28801, 2.76857)
 texture = ExtResource("2_nup0s")
 
-[node name="puddle_small2" type="Sprite2D" parent="."]
-position = Vector2(2508, 2473)
-scale = Vector2(2.28801, 1.45122)
-texture = ExtResource("2_nup0s")
-
-[node name="puddle_big2" type="Sprite2D" parent="."]
-position = Vector2(320, 506)
-scale = Vector2(1.97507, 1.18314)
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2"]
+position = Vector2(-956.288, -1355.41)
+scale = Vector2(0.863225, 0.815273)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big2" type="Sprite2D" parent="puddle_big2"]
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2"]
 position = Vector2(402.548, 1336.16)
 scale = Vector2(1.72215, 1.43728)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big2"]
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2/puddle_big2"]
 position = Vector2(224.946, -777.938)
 scale = Vector2(0.464595, 0.513766)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big3" type="Sprite2D" parent="puddle_big2"]
+[node name="puddle_big3" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2"]
 position = Vector2(97.6194, 804.832)
 scale = Vector2(0.915701, 0.907362)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3"]
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2/puddle_big3"]
 position = Vector2(546.395, 1044)
 scale = Vector2(0.29928, 0.265873)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3/puddle_big2"]
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2/puddle_big3/puddle_big2"]
 position = Vector2(1849.35, -3867.92)
 scale = Vector2(1.3959, 1.78859)
 texture = ExtResource("1_kg1ln")
 
-[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3/puddle_big2/puddle_big2"]
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big/puddle_small2/puddle_big2/puddle_big3/puddle_big2/puddle_big2"]
 position = Vector2(-300.441, -366.302)
 scale = Vector2(0.672092, 0.377411)
 texture = ExtResource("1_kg1ln")
+
+[node name="puddle_small" type="Sprite2D" parent="puddle_big"]
+position = Vector2(-565, 1182.33)
+scale = Vector2(0.864656, 0.933124)
+texture = ExtResource("2_nup0s")
+
+[node name="puddle_small" type="Sprite2D" parent="puddle_big/puddle_small"]
+position = Vector2(28.9132, 2375.69)
+scale = Vector2(0.968383, 0.781014)
+texture = ExtResource("2_nup0s")
 
 [node name="level" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(208.024, -128.355)
 
 [node name="Jorgito" parent="level" instance=ExtResource("5_4a05x")]
-position = Vector2(1508.98, 3123.35)
+position = Vector2(5742.98, 805.355)
 character_name = "Jorgito"
 
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("6_yfav0")]
@@ -84,7 +90,7 @@ initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
 [node name="Character" parent="level" instance=ExtResource("7_qanbl")]
-position = Vector2(1926.98, 2577.35)
+position = Vector2(1303.98, 3135.35)
 
 [node name="flower" parent="level" instance=ExtResource("9_3tit4")]
 position = Vector2(2501.98, 982.355)
@@ -138,22 +144,26 @@ position = Vector2(3400.98, 1561.35)
 position = Vector2(1812.98, 3199.35)
 
 [node name="mushroom_small" parent="level" instance=ExtResource("12_hpi2c")]
-position = Vector2(2697.98, 2356.35)
+position = Vector2(898.976, 1424.35)
 
 [node name="mushroom_small3" parent="level" instance=ExtResource("12_hpi2c")]
-position = Vector2(2774.98, 2474.35)
+position = Vector2(-496.024, 1738.35)
 
 [node name="mushroom_small2" parent="level" instance=ExtResource("12_hpi2c")]
-position = Vector2(2523.98, 2409.35)
+position = Vector2(-399.024, 1562.35)
 
 [node name="grass14" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(-369.359, -286.035)
+position = Vector2(2214.98, 370.355)
 
 [node name="grass15" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(-921.388, -934.964)
+position = Vector2(-574.024, 1210.35)
 
 [node name="grass16" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(-1711.26, -1401.84)
+position = Vector2(-273.024, 3129.35)
+
+[node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
+position = Vector2(1325.98, 372.355)
+dialogs = ["Hello", "heloo2"]
 
 [node name="enemy" parent="level" instance=ExtResource("13_qiguf")]
 position = Vector2(2791.98, 1186.35)
@@ -195,7 +205,7 @@ amount = 3
 position = Vector2(2636.78, 2137.18)
 
 [node name="Item5" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(2838.76, 1891.49)
+position = Vector2(-140.024, 2880.35)
 item_type = "Magic Sword"
 
 [node name="Item4" parent="level" instance=ExtResource("14_qv2ha")]
@@ -204,14 +214,14 @@ item_type = "Coso"
 amount = 3
 
 [node name="Item9" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(2953.98, 1997.35)
+position = Vector2(3300.98, 1929.35)
 
 [node name="Item8" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(2694.98, 1968.35)
+position = Vector2(995.976, 1608.35)
 item_type = "Magic Sword"
 
 [node name="Item7" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(2847.81, 2114.57)
+position = Vector2(-482.024, 951.355)
 item_type = "Coso"
 amount = 3
 
@@ -227,7 +237,7 @@ music_track = "res://music/310-world-map-loop.ogg"
 [node name="UI" parent="." instance=ExtResource("2_ybluk")]
 
 [node name="Portal" parent="." instance=ExtResource("3_3gqm7")]
-position = Vector2(4635, 187)
+position = Vector2(5303, 306)
 script = ExtResource("4_23nfp")
 
 [node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]

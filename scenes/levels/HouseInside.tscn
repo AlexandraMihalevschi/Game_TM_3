@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://ddfr0xxi2hppu"]
 
 [ext_resource type="Texture2D" uid="uid://bijef2y1b822l" path="res://textures/house_inside.png" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/props/Table.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bm63xna52012q" path="res://scenes/props/Table.tscn" id="3"]
 [ext_resource type="Script" path="res://scenes/misc/Exit.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]

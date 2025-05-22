@@ -22,3 +22,9 @@ res://scenes/items/Item.tscn
 res://scenes/misc/tree_limiter.tscn
 res://scenes/misc/portal.tscn
 res://scenes/levels/outside2.tscn
+res://scenes/characters/BrutalHorse.tscn
+res://scenes/characters/brutal_horse.gd
+res://scenes/props/Table.tscn
+res://scenes/misc/Healthbar.tscn
+res://scenes/misc/DespawnFX.tscn
+res://scenes/levels/Menu.tscn
