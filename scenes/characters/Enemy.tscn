@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/characters/Enemy.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://dgmhft8dl1n3d" path="res://textures/pj/pj.png" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/misc/ItemSpawner.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ciy0fkc4qg14g" path="res://scenes/misc/ItemSpawner.tscn" id="3"]
 
 [sub_resource type="CapsuleShape2D" id="1"]
 radius = 35.8589

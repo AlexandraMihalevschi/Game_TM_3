@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://w47chxu5i2vb"]
+
+[ext_resource type="Texture2D" uid="uid://c227rrl5deh7c" path="res://textures/props/portal.png" id="1_gemxc"]
+[ext_resource type="Script" path="res://scenes/misc/Exit.gd" id="2_yc4yw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7m0q"]
+size = Vector2(169, 184)
+
+[node name="Portal" type="StaticBody2D"]
+position = Vector2(-335, -161)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(330, 193)
+scale = Vector2(0.310547, 0.373047)
+texture = ExtResource("1_gemxc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(185, 17, 183, 355, 491, 353, 493, 3)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(323, 231)
+script = ExtResource("2_yc4yw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_c7m0q")

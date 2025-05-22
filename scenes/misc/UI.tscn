@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://deqgnj30xx13t"]
 
-[ext_resource type="PackedScene" path="res://scenes/misc/Dialog_box.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/misc/Stats.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://6ej4l26bwlbh" path="res://scenes/misc/Dialog_box.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://somuuw6qhxcw" path="res://scenes/misc/Stats.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://iu0aegkhj8po" path="res://scenes/misc/StatusText.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/misc/Healthbar.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://dwn5qf313j5en" path="res://textures/misc/btn-roll.png" id="5"]

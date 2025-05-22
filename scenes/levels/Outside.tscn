@@ -1,18 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://damx5ema0gns7"]
+[gd_scene load_steps=18 format=3 uid="uid://damx5ema0gns7"]
 
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/props/Grass.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://0ufegcjd2xrq" path="res://scenes/props/Grass.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://w47chxu5i2vb" path="res://scenes/misc/portal.tscn" id="3_wv1lb"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/props/House.tscn" id="5"]
+[ext_resource type="Script" path="res://scenes/misc/portal.gd" id="4_2udu8"]
+[ext_resource type="PackedScene" uid="uid://ciophcv17yxah" path="res://scenes/props/House.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/props/Flower.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="11"]
-[ext_resource type="PackedScene" path="res://scenes/items/Item.tscn" id="12"]
-[ext_resource type="PackedScene" path="res://scenes/characters/Npc.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="13_ay8qc"]
 [ext_resource type="PackedScene" uid="uid://dwu2tlrkse1kh" path="res://scenes/misc/Quest.tscn" id="14"]
 
 [node name="Outside" type="Node"]
@@ -35,6 +38,13 @@ texture = ExtResource("11")
 position = Vector2(1782.78, 1096.72)
 scale = Vector2(1.97507, 1.97507)
 texture = ExtResource("10")
+
+[node name="Portal" parent="." instance=ExtResource("3_wv1lb")]
+position = Vector2(3044, 1003)
+script = ExtResource("4_2udu8")
+
+[node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
+position = Vector2(-2.12201, 173.199)
 
 [node name="level" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -186,7 +196,79 @@ position = Vector2(2847.81, 2114.57)
 item_type = "Coso"
 amount = 3
 
+[node name="TreeLimiter2" parent="level" instance=ExtResource("13_ay8qc")]
+position = Vector2(-1173.02, 1409.35)
+
+[node name="TreeLimiter" parent="level" instance=ExtResource("13_ay8qc")]
+position = Vector2(-1114.02, 1734.35)
+
 [node name="music_track" parent="." instance=ExtResource("6")]
 music_track = "res://music/310-world-map-loop.ogg"
 
 [node name="UI" parent="." instance=ExtResource("2")]
+
+[node name="TreeLimiter" parent="." instance=ExtResource("13_ay8qc")]
+position = Vector2(-930.206, 874.671)
+
+[node name="TreeLimiter" parent="TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(35.636, -399.122)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(85.5225, -527.413)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(627.193, -99.7806)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(769.737, -270.833)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(641.447, -142.544)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(641.447, 128.289)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(741.228, 235.197)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(641.447, 334.978)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(712.719, 399.123)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(270.833, 477.522)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(21.3838, 449.013)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-185.307, 662.829)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-527.412, 548.794)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-498.903, 456.14)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-726.974, 178.18)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-769.736, 71.272)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-705.592, 57.0176)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-798.245, -92.6536)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-669.956, -498.903)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-121.162, -527.413)
+
+[node name="TreeLimiter" parent="TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter/TreeLimiter" instance=ExtResource("13_ay8qc")]
+position = Vector2(-156.798, -334.978)

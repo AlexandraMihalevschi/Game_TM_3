@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3gcaj4vrpbko"]
+
+[ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="1_ufusx"]
+[ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2_ybluk"]
+
+[node name="Outside2" type="Node"]
+
+[node name="music_track" parent="." instance=ExtResource("1_ufusx")]
+music_track = "res://music/310-world-map-loop.ogg"
+
+[node name="UI" parent="." instance=ExtResource("2_ybluk")]

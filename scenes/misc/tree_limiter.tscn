@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bncf20j7xwun6"]
+
+[ext_resource type="Texture2D" uid="uid://0pkk3be2jers" path="res://textures/props/tree.png" id="1_05vb4"]
+
+[node name="TreeLimiter" type="StaticBody2D"]
+z_index = -2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_05vb4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = -2
+polygon = PackedVector2Array(-482, 292, -505, -209, 483, -244, 485, 297)
