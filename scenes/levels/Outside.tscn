@@ -44,7 +44,7 @@ position = Vector2(3044, 1003)
 script = ExtResource("4_2udu8")
 
 [node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
-position = Vector2(330, 351)
+position = Vector2(-2.12201, 173.199)
 
 [node name="level" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -128,13 +128,13 @@ position = Vector2(1955.56, 2467.91)
 position = Vector2(2546.13, 2601.62)
 
 [node name="grass14" parent="level" instance=ExtResource("3")]
-position = Vector2(-369.359, -286.035)
+position = Vector2(1320.98, 49.355)
 
 [node name="grass15" parent="level" instance=ExtResource("3")]
-position = Vector2(-921.388, -934.964)
+position = Vector2(3477.98, 1822.35)
 
 [node name="grass16" parent="level" instance=ExtResource("3")]
-position = Vector2(-1711.26, -1401.84)
+position = Vector2(-189.024, 2985.35)
 
 [node name="enemy" parent="level" instance=ExtResource("4")]
 position = Vector2(909.861, 2408.58)
