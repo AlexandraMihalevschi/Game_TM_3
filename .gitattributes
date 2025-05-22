@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 *.tscn merge=union
+=======
+*.tscn merge=union
+>>>>>>> stefan

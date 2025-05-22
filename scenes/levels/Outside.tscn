@@ -42,7 +42,6 @@ texture = ExtResource("10")
 [node name="Portal" parent="." instance=ExtResource("3_wv1lb")]
 position = Vector2(3044, 1003)
 script = ExtResource("4_2udu8")
-to_scene = "res://scenes/pong/game.tscn"
 
 [node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
 position = Vector2(330, 351)
