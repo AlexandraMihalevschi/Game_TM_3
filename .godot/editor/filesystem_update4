@@ -1,9 +1,0 @@
-res://default_bus_layout.tres
-res://default_env.tres
-res://scenes/pong/paddle.tscn
-res://singletons/Music.gd
-res://scenes/misc/stats.stylebox
-res://scenes/pong/ball.tscn
-res://scenes/pong/game.tscn
-res://scenes/misc/StatusText.tscn
-res://scenes/levels/Outside.tscn
