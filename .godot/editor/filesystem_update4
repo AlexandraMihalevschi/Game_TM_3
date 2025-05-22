@@ -3,8 +3,6 @@ res://default_env.tres
 res://scenes/levels/Intro.tscn
 res://singletons/Music.gd
 res://scenes/misc/stats.stylebox
-res://scenes/characters/Enemy.gd
-res://scenes/misc/Stats.gd
 res://scenes/misc/Quest.tscn
 res://scenes/characters/Player.tscn
 res://singletons/Music.tscn
@@ -17,4 +15,10 @@ res://scenes/misc/StatusText.tscn
 res://scenes/misc/Dialog_box.tscn
 res://scenes/characters/Npc.tscn
 res://scenes/misc/Stats.tscn
+res://scenes/misc/ItemSpawner.tscn
+res://scenes/props/House.tscn
+res://scenes/props/Grass.tscn
+res://scenes/items/Item.tscn
+res://scenes/misc/tree_limiter.tscn
+res://scenes/misc/portal.tscn
 res://scenes/levels/outside2.tscn

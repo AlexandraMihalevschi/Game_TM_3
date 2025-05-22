@@ -74,24 +74,6 @@ theme_override_fonts/font = ExtResource("3")
 text = "Item 1
 "
 
-[node name="Crafting" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer/Crafting"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2")
-text = "Inventory"
-horizontal_alignment = 1
-
-[node name="Details" type="Label" parent="VBoxContainer/HBoxContainer/Crafting"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3")
-text = "Item 1
-"
-
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3gcaj4vrpbko"]
+[gd_scene load_steps=17 format=3 uid="uid://c3gcaj4vrpbko"]
 
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="1_kg1ln"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="1_ufusx"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="5_4a05x"]
 [ext_resource type="PackedScene" uid="uid://dwu2tlrkse1kh" path="res://scenes/misc/Quest.tscn" id="6_yfav0"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="7_qanbl"]
-[ext_resource type="PackedScene" uid="uid://ciophcv17yxah" path="res://scenes/props/House.tscn" id="8_o4i2q"]
 [ext_resource type="PackedScene" path="res://scenes/props/Flower.tscn" id="9_3tit4"]
 [ext_resource type="PackedScene" uid="uid://0ufegcjd2xrq" path="res://scenes/props/Grass.tscn" id="10_jncih"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="11_s66tv"]
@@ -21,37 +20,61 @@
 [node name="Outside2" type="Node"]
 
 [node name="puddle_big" type="Sprite2D" parent="."]
-position = Vector2(661.445, 950.947)
+position = Vector2(806, 156.25)
+scale = Vector2(1, 0.524176)
 texture = ExtResource("1_kg1ln")
 
 [node name="puddle_small" type="Sprite2D" parent="."]
-position = Vector2(1329.08, 687.921)
-scale = Vector2(0.995735, 0.995735)
+position = Vector2(1200, 452)
+scale = Vector2(0.864656, 0.489121)
 texture = ExtResource("2_nup0s")
 
 [node name="puddle_small2" type="Sprite2D" parent="."]
-position = Vector2(441.76, 1575.24)
-scale = Vector2(0.995735, 0.995735)
+position = Vector2(2508, 2473)
+scale = Vector2(2.28801, 1.45122)
 texture = ExtResource("2_nup0s")
 
 [node name="puddle_big2" type="Sprite2D" parent="."]
-position = Vector2(1782.78, 1096.72)
-scale = Vector2(1.97507, 1.97507)
+position = Vector2(320, 506)
+scale = Vector2(1.97507, 1.18314)
 texture = ExtResource("1_kg1ln")
 
-[node name="Portal" parent="." instance=ExtResource("3_3gqm7")]
-position = Vector2(3044, 1003)
-script = ExtResource("4_23nfp")
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big2"]
+position = Vector2(402.548, 1336.16)
+scale = Vector2(1.72215, 1.43728)
+texture = ExtResource("1_kg1ln")
 
-[node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
-position = Vector2(330, 351)
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big2"]
+position = Vector2(224.946, -777.938)
+scale = Vector2(0.464595, 0.513766)
+texture = ExtResource("1_kg1ln")
+
+[node name="puddle_big3" type="Sprite2D" parent="puddle_big2"]
+position = Vector2(97.6194, 804.832)
+scale = Vector2(0.915701, 0.907362)
+texture = ExtResource("1_kg1ln")
+
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3"]
+position = Vector2(546.395, 1044)
+scale = Vector2(0.29928, 0.265873)
+texture = ExtResource("1_kg1ln")
+
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3/puddle_big2"]
+position = Vector2(1849.35, -3867.92)
+scale = Vector2(1.3959, 1.78859)
+texture = ExtResource("1_kg1ln")
+
+[node name="puddle_big2" type="Sprite2D" parent="puddle_big2/puddle_big3/puddle_big2/puddle_big2"]
+position = Vector2(-300.441, -366.302)
+scale = Vector2(0.672092, 0.377411)
+texture = ExtResource("1_kg1ln")
 
 [node name="level" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(208.024, -128.355)
 
 [node name="Jorgito" parent="level" instance=ExtResource("5_4a05x")]
-position = Vector2(2062.51, 2957.82)
+position = Vector2(1508.98, 3123.35)
 character_name = "Jorgito"
 
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("6_yfav0")]
@@ -61,17 +84,10 @@ initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
 [node name="Character" parent="level" instance=ExtResource("7_qanbl")]
-position = Vector2(1509.86, 2579.34)
-
-[node name="house" parent="level" instance=ExtResource("8_o4i2q")]
-position = Vector2(908.151, 406.509)
-to_scene = "res://scenes/levels/HouseInside.tscn"
-
-[node name="house_outside" type="Marker2D" parent="level/house" groups=["spawnpoints"]]
-position = Vector2(-2.12201, 173.199)
+position = Vector2(1926.98, 2577.35)
 
 [node name="flower" parent="level" instance=ExtResource("9_3tit4")]
-position = Vector2(-495.829, 1186.5)
+position = Vector2(2501.98, 982.355)
 
 [node name="flower2" parent="level" instance=ExtResource("9_3tit4")]
 position = Vector2(2000.14, 283.939)
@@ -80,52 +96,55 @@ position = Vector2(2000.14, 283.939)
 position = Vector2(3047.55, 841.074)
 
 [node name="grass" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(1454.14, 1621.06)
+position = Vector2(826.976, 495.355)
 
 [node name="grass2" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(1610.14, 1777.06)
+position = Vector2(401.976, 145.355)
 
 [node name="grass3" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(1721.57, 2011.06)
+position = Vector2(3510.98, 1754.35)
 
 [node name="grass4" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(1844.14, 1598.78)
+position = Vector2(190.976, 248.355)
 
 [node name="grass5" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(1977.85, 1821.63)
+position = Vector2(3148.98, 1210.35)
 
 [node name="grass6" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(2278.7, 1520.78)
+position = Vector2(3180.98, 1394.35)
 
 [node name="grass7" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(807.868, 1777.06)
+position = Vector2(-260.024, 493.355)
 
 [node name="grass8" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(741.012, 2011.06)
+position = Vector2(2904.98, 1346.35)
 
 [node name="grass9" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(484.729, 1765.92)
+position = Vector2(-355.024, 514.355)
 
 [node name="grass10" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(295.304, 2022.2)
+position = Vector2(3020.98, 1528.35)
 
 [node name="grass11" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(540.443, 2111.34)
+position = Vector2(3283.98, 1438.35)
 
 [node name="grass12" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(61.3066, 1788.2)
+position = Vector2(-510.024, 587.355)
 
 [node name="grass13" parent="level" instance=ExtResource("10_jncih")]
-position = Vector2(-217.261, 2122.48)
+position = Vector2(3400.98, 1561.35)
 
 [node name="mushroom_big" parent="level" instance=ExtResource("11_s66tv")]
-position = Vector2(2278.7, 2345.34)
+position = Vector2(1812.98, 3199.35)
 
 [node name="mushroom_small" parent="level" instance=ExtResource("12_hpi2c")]
-position = Vector2(1955.56, 2467.91)
+position = Vector2(2697.98, 2356.35)
+
+[node name="mushroom_small3" parent="level" instance=ExtResource("12_hpi2c")]
+position = Vector2(2774.98, 2474.35)
 
 [node name="mushroom_small2" parent="level" instance=ExtResource("12_hpi2c")]
-position = Vector2(2546.13, 2601.62)
+position = Vector2(2523.98, 2409.35)
 
 [node name="grass14" parent="level" instance=ExtResource("10_jncih")]
 position = Vector2(-369.359, -286.035)
@@ -137,22 +156,22 @@ position = Vector2(-921.388, -934.964)
 position = Vector2(-1711.26, -1401.84)
 
 [node name="enemy" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(909.861, 2408.58)
+position = Vector2(2791.98, 1186.35)
 
 [node name="enemy2" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(1401.15, 2054.49)
+position = Vector2(-270.024, 1421.35)
 
 [node name="enemy3" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(170.712, 2514.8)
+position = Vector2(476.976, 1973.35)
 
 [node name="enemy4" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(887.73, 2775.94)
+position = Vector2(675.976, 2924.35)
 
 [node name="enemy5" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(1352.46, 2961.83)
+position = Vector2(1435.98, 1509.35)
 
 [node name="enemy6" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(144.914, 746.878)
+position = Vector2(348.976, 943.355)
 
 [node name="enemy7" parent="level" instance=ExtResource("13_qiguf")]
 position = Vector2(1766.1, 666.819)
@@ -161,14 +180,14 @@ position = Vector2(1766.1, 666.819)
 position = Vector2(2446.6, 633.461)
 
 [node name="Item" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(1032.97, 1956.3)
+position = Vector2(796.976, 1888.35)
 
 [node name="Item2" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(1234.96, 1710.6)
+position = Vector2(653.976, 1335.35)
 item_type = "Magic Sword"
 
 [node name="Item3" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(969.666, 1659.36)
+position = Vector2(1604.98, 1163.35)
 item_type = "Coso"
 amount = 3
 
@@ -185,10 +204,10 @@ item_type = "Coso"
 amount = 3
 
 [node name="Item9" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(2911.12, 2411.52)
+position = Vector2(2953.98, 1997.35)
 
 [node name="Item8" parent="level" instance=ExtResource("14_qv2ha")]
-position = Vector2(3113.1, 2165.82)
+position = Vector2(2694.98, 1968.35)
 item_type = "Magic Sword"
 
 [node name="Item7" parent="level" instance=ExtResource("14_qv2ha")]
@@ -206,6 +225,13 @@ position = Vector2(-1114.02, 1734.35)
 music_track = "res://music/310-world-map-loop.ogg"
 
 [node name="UI" parent="." instance=ExtResource("2_ybluk")]
+
+[node name="Portal" parent="." instance=ExtResource("3_3gqm7")]
+position = Vector2(4635, 187)
+script = ExtResource("4_23nfp")
+
+[node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
+position = Vector2(330, 351)
 
 [node name="TreeLimiter" parent="." instance=ExtResource("15_2dvme")]
 position = Vector2(-930.206, 874.671)
