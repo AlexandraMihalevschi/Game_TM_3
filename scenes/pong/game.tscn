@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqk3s073lc83"]
+
+[ext_resource type="Script" path="res://scenes/pong/game.gd" id="1_0sh57"]
+[ext_resource type="PackedScene" uid="uid://dh5uckkhminrt" path="res://scenes/pong/paddle.tscn" id="2_4gt7i"]
+[ext_resource type="PackedScene" uid="uid://dmyd48dfqc1c8" path="res://scenes/pong/ball.tscn" id="3_1x6nx"]
+[ext_resource type="FontFile" path="res://fonts/dialog.tres" id="4_i7rp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnrlc"]
+size = Vector2(1155, 51)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u6hmu"]
+a = Vector2(2, 1204)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqqo3"]
+font = ExtResource("4_i7rp3")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_0sh57")
+
+[node name="TopGoal" type="Area2D" parent="."]
+position = Vector2(510, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopGoal"]
+position = Vector2(69.5, 15.5)
+shape = SubResource("RectangleShape2D_wnrlc")
+
+[node name="BottomGoal" type="Area2D" parent="."]
+position = Vector2(614, 669)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomGoal"]
+position = Vector2(-34, 4)
+shape = SubResource("RectangleShape2D_wnrlc")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1162, -302)
+shape = SubResource("SegmentShape2D_u6hmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-9, -331)
+shape = SubResource("SegmentShape2D_u6hmu")
+
+[node name="BottomPaddle" parent="." instance=ExtResource("2_4gt7i")]
+position = Vector2(588, 574)
+
+[node name="TopPaddle" parent="." instance=ExtResource("2_4gt7i")]
+position = Vector2(559, 82)
+rotation = 3.14159
+is_ai = true
+
+[node name="Ball" parent="." instance=ExtResource("3_1x6nx")]
+position = Vector2(585, 366)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="ScoreBottom" type="Label" parent="GUI"]
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.029
+anchor_right = 0.072
+anchor_bottom = 0.029
+offset_left = 7.51199
+offset_top = 514.208
+offset_right = 31.3876
+offset_bottom = 597.208
+text = "0"
+label_settings = SubResource("LabelSettings_vqqo3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreTop" type="Label" parent="GUI"]
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.029
+anchor_right = 0.105
+anchor_bottom = 0.075
+offset_left = -10.488
+offset_top = -7.792
+offset_right = -10.488
+offset_bottom = 30.4
+text = "0"
+label_settings = SubResource("LabelSettings_vqqo3")
+horizontal_alignment = 1
+vertical_alignment = 1

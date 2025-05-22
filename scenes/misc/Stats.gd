@@ -26,7 +26,7 @@ func _input(event):
 			print("Menu opened")  # Debug
 	
 	# Explicit check for C key (not just "craft" action)
-	if enabled and (event.is_action_pressed("craft") or (event is InputEventKey and event.keycode == KEY_C)):
+	if enabled and ((event is InputEventKey and event.keycode == KEY_C)):
 		print("C key pressed")  # Debug
 		attempt_crafting()
 

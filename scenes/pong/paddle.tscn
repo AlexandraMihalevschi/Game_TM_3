@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh5uckkhminrt"]
+
+[ext_resource type="Texture2D" uid="uid://bvrk45qep8qpq" path="res://textures/misc/pallete90.png" id="1_e6fpo"]
+[ext_resource type="Script" path="res://scenes/pong/paddle.gd" id="1_ilkiu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w42vf"]
+radius = 52.9528
+
+[node name="Paddle" type="CharacterBody2D"]
+script = ExtResource("1_ilkiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.43051e-06, 0)
+scale = Vector2(0.12828, 0.125862)
+texture = ExtResource("1_e6fpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_w42vf")
