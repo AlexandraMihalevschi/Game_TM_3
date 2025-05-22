@@ -18,11 +18,8 @@ size = Vector2(60, 200)
 [node name="UI" type="CanvasLayer"]
 
 [node name="Dialog_box" parent="." instance=ExtResource("1")]
-anchors_preset = 12
-expand_mode = 1
 
 [node name="Stats" parent="." instance=ExtResource("2")]
-anchors_preset = 15
 
 [node name="Status_text" parent="." instance=ExtResource("3")]
 visible = false
