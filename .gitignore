@@ -12,3 +12,12 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 build/
+
+
+# Godot editor state & cache
+.godot/editor/
+*.tscn-editstate-*.cfg
+filesystem_*
+editor_layout.cfg
+script_editor_cache.cfg
+create_recent.Node
