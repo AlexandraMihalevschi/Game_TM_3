@@ -1225,14 +1225,15 @@ amount = 3
 
 [node name="item_spawner2" parent="." instance=ExtResource("3")]
 item_type = "Wood"
-amount = 2
+amount = 3
 
 [node name="item_spawner3" parent="." instance=ExtResource("3")]
 item_type = "Herb"
+amount = 3
 
 [node name="item_spawner4" parent="." instance=ExtResource("3")]
 item_type = "Water"
-amount = 2
+amount = 3
 
 [node name="item_spawner5" parent="." instance=ExtResource("3")]
 item_type = "Leather"
