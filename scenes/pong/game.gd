@@ -9,6 +9,10 @@ var score_top: Label
 var bottom_score: int = 0
 var top_score: int = 0
 
+# Game state
+var game_over: bool = false
+const WINNING_SCORE: int = 10
+
 func _ready():
 	print("=== GAME STARTING ===")
 	
@@ -77,7 +81,7 @@ func update_scores():
 	print("Scores updated - Bottom: ", bottom_score, " Top: ", top_score)
 
 func _physics_process(delta: float) -> void:
-	if not ball:
+	if not ball or game_over:
 		return
 	
 	# Check for scoring
@@ -89,10 +93,101 @@ func _physics_process(delta: float) -> void:
 		print("GOAL! Top player scored!")
 		top_score += 1
 		update_scores()
-		ball.reset_ball()
+		check_game_over()
+		if not game_over:
+			ball.reset_ball()
 		
 	elif ball_y < -20:  # Ball went off top
 		print("GOAL! Bottom player scored!")
 		bottom_score += 1
 		update_scores()
+		check_game_over()
+		if not game_over:
+			ball.reset_ball()
+
+func check_game_over():
+	if bottom_score >= WINNING_SCORE:
+		game_over = true
+		on_player_wins()
+	elif top_score >= WINNING_SCORE:
+		game_over = true
+		on_player_loses()
+
+func on_player_wins():
+	print("🎉 PLAYER WINS! Final Score - Player: ", bottom_score, " AI: ", top_score)
+	
+	# Stop the ball
+	if ball:
+		ball.velocity = Vector2.ZERO
+	
+	# Display win message
+	show_game_over_message("YOU WIN!", Color.GREEN)
+	
+	# Add any additional win logic here
+	# For example: play victory sound, save high score, etc.
+
+func on_player_loses():
+	print("💀 PLAYER LOSES! Final Score - Player: ", bottom_score, " AI: ", top_score)
+	
+	# Stop the ball
+	if ball:
+		ball.velocity = Vector2.ZERO
+	
+	# Display lose message
+	show_game_over_message("YOU LOSE!", Color.RED)
+	
+	# Add any additional lose logic here
+	# For example: play defeat sound, show retry option, etc.
+
+func show_game_over_message(message: String, color: Color):
+	# Create a temporary label for the game over message
+	var game_over_label = Label.new()
+	game_over_label.text = message
+	game_over_label.add_theme_font_size_override("font_size", 72)
+	game_over_label.modulate = color
+	
+	# Center the message on screen
+	var screen_size = get_viewport_rect().size
+	game_over_label.position = Vector2(
+		screen_size.x / 2 - 150,  # Approximate centering
+		screen_size.y / 2 - 36    # Half of font size for vertical centering
+	)
+	
+	add_child(game_over_label)
+	
+	# Optional: Add restart instruction
+	var restart_label = Label.new()
+	restart_label.text = "Press R to restart"
+	restart_label.add_theme_font_size_override("font_size", 32)
+	restart_label.modulate = Color.WHITE
+	restart_label.position = Vector2(
+		screen_size.x / 2 - 100,
+		screen_size.y / 2 + 50
+	)
+	
+	add_child(restart_label)
+
+func _input(event):
+	# Allow restarting the game when it's over
+	if game_over and event.is_action_pressed("ui_accept") or (event is InputEventKey and event.pressed and event.keycode == KEY_R):
+		restart_game()
+
+func restart_game():
+	print("=== RESTARTING GAME ===")
+	
+	# Reset scores
+	bottom_score = 0
+	top_score = 0
+	game_over = false
+	
+	# Update score display
+	update_scores()
+	
+	# Reset ball
+	if ball:
 		ball.reset_ball()
+	
+	# Remove any game over messages
+	for child in get_children():
+		if child is Label and child != score_bottom and child != score_top:
+			child.queue_free()
