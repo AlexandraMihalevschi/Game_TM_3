@@ -49,7 +49,16 @@ func _input(event):
 	if not dialogs.is_empty():
 		Dialogs.show_dialog(dialogs[current_dialog], character_name)
 		current_dialog = wrapi(current_dialog + 1, 0, dialogs.size())
-		
+		if randi()%8 == 0:
+			Inventory.add_item("Iron", 2) 
+		elif randi()%8 == 1:
+			Inventory.add_item("Water", 2)
+		elif randi()%8 == 3:
+			Inventory.add_item("Banana", 69) 
+		elif randi()%8 == 4:
+			Inventory.add_item("Woden Sword", 1)
+		else:
+			pass  
 func _on_body_entered(body):
 	if body is Player:
 		active = true
@@ -64,17 +73,11 @@ func _on_body_exited(body):
 
 func _on_dialog_ended():
 	# Only spawn if this NPC was the one who initiated the dialog
-	if active:
-		var item_names = ["Iron", "Water"]
-
-# Select a random name from the list
-		var item_name = item_names[randi() % item_names.size()]
-
 		# Your logic
-		Inventory.add_item(item_name, 2) 
-			
-		if despawn_after_item:
-			despawn()
+	Inventory.add_item("Iron", 2) 
+		
+	if despawn_after_item:
+		despawn()
 
 func despawn():
 	# Create and add particle effect
