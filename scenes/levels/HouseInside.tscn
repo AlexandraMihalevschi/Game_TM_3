@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddfr0xxi2hppu"]
+[gd_scene load_steps=18 format=3 uid="uid://ddfr0xxi2hppu"]
 
 [ext_resource type="Texture2D" uid="uid://bijef2y1b822l" path="res://textures/house_inside.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://bm63xna52012q" path="res://scenes/props/Table.tscn" id="3"]
 [ext_resource type="Script" path="res://scenes/misc/Exit.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://ciy0fkc4qg14g" path="res://scenes/misc/ItemSpawner.tscn" id="5_h72ih"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="8"]
@@ -103,6 +104,10 @@ position = Vector2(8.49194, 72.6704)
 position = Vector2(-301.59, 257.193)
 script = ExtResource("4")
 to_scene = "res://scenes/pong/game.tscn"
+
+[node name="item_spawner" parent="house_inside/Area2D" instance=ExtResource("5_h72ih")]
+position = Vector2(110.522, -31.5071)
+item_type = "Magic Ball"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="house_inside/Area2D"]
 position = Vector2(2.59021, -43.1925)
