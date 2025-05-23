@@ -7,7 +7,7 @@ text Quest.process() returns
 """
 
 var active = false
-@export var character_name: String = "The Fortune TELLER!!!!!"
+@export var character_name: String = "The Fortune Wheel"
 @export var dialogs = ["..."] # (Array, String, MULTILINE)
 var current_dialog = 0
 @export var spawn_item_after_dialogue := false # Toggle whether to spawn item after talking
