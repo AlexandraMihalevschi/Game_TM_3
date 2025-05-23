@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="8"]
-[ext_resource type="PackedScene" uid="uid://c86h27dkrrlm7" path="res://scenes/characters/Npc2.tscn" id="8_rqqpm"]
+[ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="8_rqqpm"]
 [ext_resource type="Script" path="res://scenes/levels/HouseExitTrigger.gd" id="9_gy5ly"]
 
 [sub_resource type="Animation" id="1"]

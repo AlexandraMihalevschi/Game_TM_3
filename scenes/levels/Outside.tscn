@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/props/Flower.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="8"]
-[ext_resource type="PackedScene" uid="uid://c86h27dkrrlm7" path="res://scenes/characters/Npc2.tscn" id="8_86ya3"]
+[ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="8_86ya3"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="11"]

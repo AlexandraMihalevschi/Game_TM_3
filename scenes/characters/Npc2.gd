@@ -36,21 +36,17 @@ var can_attack = true
 
 # Dialog
 var cutscene_dialog = [
-	"Wait! I'm coming with you!",
+	"Bbg, Wait!",
 	"It's dangerous out there alone.",
-	"Let me help you on your journey."
+	"Let me help you out."
 ]
 var current_dialog_index = 0
 
 # Random phrases
 var follow_phrases = [
-	"This way looks interesting!",
-	"Stay close, I've got your back!",
 	"What's that over there?",
 	"I'm right behind you!",
-	"Adventure awaits!",
-	"Watch out for enemies!",
-	"I'll protect you!"
+	"Watch out for enemies!"
 ]
 var phrase_timer = 0.0
 var phrase_cooldown = 8.0
@@ -165,13 +161,11 @@ func _handle_following_behavior(delta):
 	if distance_to_player > max_follow_distance:
 		# Too far - move directly toward player at high speed
 		target_velocity = direction_to_player * CHAOTIC_SPEED
-		print("NPC2: Catching up to player (far)")
 	elif distance_to_player > follow_distance:
 		# In follow range - use chaotic movement
 		var chaotic_influence = 0.6  # How much chaos vs direct following
 		var final_direction = (direction_to_player * (1.0 - chaotic_influence) + chaotic_direction * chaotic_influence).normalized()
 		target_velocity = final_direction * SPEED
-		print("NPC2: Following with chaos - Distance: ", int(distance_to_player))
 	else:
 		# Close enough - minimal movement with pure chaos
 		target_velocity = chaotic_direction * (SPEED * 0.3)
@@ -187,7 +181,6 @@ func _change_chaotic_direction():
 	var random_angle = randf() * 2 * PI
 	chaotic_direction = Vector2(cos(random_angle), sin(random_angle))
 	chaotic_change_interval = randf_range(0.8, 2.5)  # More frequent changes for chaos
-	print("NPC2: New chaotic direction: ", chaotic_direction)
 
 func _handle_attack_behavior(delta):
 	if current_target_enemy and is_instance_valid(current_target_enemy):
@@ -283,7 +276,7 @@ func _show_random_phrase():
 	
 	# Use the dialog system for phrases
 	if Dialogs and Dialogs.dialog_box:
-		Dialogs.show_dialog(phrase, "Companion")
+		Dialogs.show_dialog(phrase, "Pedritto")
 
 # Called by HouseExitTrigger
 func start_cutscene():
@@ -317,7 +310,7 @@ func _show_next_cutscene_dialog():
 		
 		# Use the proper dialog system
 		if Dialogs and Dialogs.dialog_box:
-			Dialogs.show_dialog(dialog_line, "Mysterious Companion")
+			Dialogs.show_dialog(dialog_line, "Pedritto")
 			# Connect to dialog ended signal to continue
 			if not Dialogs.dialog_box.dialog_ended.is_connected(_on_dialog_ended):
 				Dialogs.dialog_box.dialog_ended.connect(_on_dialog_ended)
