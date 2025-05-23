@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ddfr0xxi2hppu"]
+[gd_scene load_steps=19 format=3 uid="uid://ddfr0xxi2hppu"]
 
 [ext_resource type="Texture2D" uid="uid://bijef2y1b822l" path="res://textures/house_inside.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://bm63xna52012q" path="res://scenes/props/Table.tscn" id="3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://ciy0fkc4qg14g" path="res://scenes/misc/ItemSpawner.tscn" id="5_h72ih"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://g5u86eq6a1rf" path="res://textures/misc/tenis_table.png" id="6_acp57"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="8_rqqpm"]
@@ -113,6 +114,11 @@ item_type = "Magic Ball"
 position = Vector2(2.59021, -43.1925)
 shape = SubResource("RectangleShape2D_et06b")
 
+[node name="Sprite2D" type="Sprite2D" parent="house_inside/Area2D"]
+position = Vector2(-62.7469, -30.8549)
+scale = Vector2(0.480971, 0.549351)
+texture = ExtResource("6_acp57")
+
 [node name="walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
@@ -161,7 +167,7 @@ position = Vector2(-338, 615)
 script = ExtResource("9_gy5ly")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseExitTrigger"]
-position = Vector2(-467, 246)
+position = Vector2(-468, 182)
 shape = SubResource("RectangleShape2D_n7tcn")
 
 [editable path="house_inside/Dadbug"]

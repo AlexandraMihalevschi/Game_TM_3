@@ -115,7 +115,7 @@ func check_game_over():
 
 func on_player_wins():
 	print("🎉 PLAYER WINS! Final Score - Player: ", bottom_score, " AI: ", top_score)
-	Inventory.add_item("Game reward", 1)
+	Inventory.add_item("Game Reward", 1)
 	get_tree().change_scene_to_file("res://scenes/levels/HouseInside.tscn")
 	# Stop the ball
 	if ball:

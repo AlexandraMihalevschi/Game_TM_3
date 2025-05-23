@@ -51,6 +51,7 @@ position = Vector2(588, 574)
 [node name="TopPaddle" parent="." instance=ExtResource("2_4gt7i")]
 position = Vector2(559, 82)
 rotation = 3.14159
+is_ai = true
 
 [node name="Ball" parent="." instance=ExtResource("3_1x6nx")]
 position = Vector2(585, 366)
