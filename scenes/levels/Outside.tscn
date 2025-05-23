@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://damx5ema0gns7"]
+[gd_scene load_steps=19 format=3 uid="uid://damx5ema0gns7"]
 
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/props/Flower.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="8_86ya3"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="11"]
@@ -62,6 +63,9 @@ pending_text = "You forgot? I want 3 Generic Items"
 
 [node name="Character" parent="level" instance=ExtResource("8")]
 position = Vector2(1509.86, 2579.34)
+
+[node name="NPC2" parent="level" instance=ExtResource("8_86ya3")]
+position = Vector2(1162.98, 483.355)
 
 [node name="house" parent="level" instance=ExtResource("5")]
 position = Vector2(908.151, 406.509)
