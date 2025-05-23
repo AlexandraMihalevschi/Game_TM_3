@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnkpy0jv60hin"]
 
 [ext_resource type="FontFile" path="res://fonts/dialog.tres" id="1"]
-[ext_resource type="Texture2D" uid="uid://cb2u7ijtdnnyg" path="res://textures/menu/game_title.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://ck0bibv77mxh2" path="res://textures/menu/bg.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dhpang8sqv6sv" path="res://textures/title.png" id="3_sbivs"]
 [ext_resource type="Script" path="res://scenes/levels/Menu.gd" id="4"]
 
 [node name="Menu" type="Control"]
@@ -38,7 +38,7 @@ offset_left = -236.0
 offset_top = -185.634
 offset_right = 237.0
 offset_bottom = -5.63416
-texture = ExtResource("2")
+texture = ExtResource("3_sbivs")
 expand_mode = 1
 stretch_mode = 6
 

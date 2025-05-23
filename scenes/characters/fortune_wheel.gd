@@ -64,11 +64,15 @@ func _on_body_exited(body):
 
 func _on_dialog_ended():
 	# Only spawn if this NPC was the one who initiated the dialog
-	if active and spawn_item_after_dialogue:
-		if has_node("item_spawner"):
-			$item_spawner.spawn()
-		spawn_item_after_dialogue = false # Prevent spawning multiple times
-		
+	if active:
+		var item_names = ["Iron", "Water"]
+
+# Select a random name from the list
+		var item_name = item_names[randi() % item_names.size()]
+
+		# Your logic
+		Inventory.add_item(item_name, 2) 
+			
 		if despawn_after_item:
 			despawn()
 

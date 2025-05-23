@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="11_s66tv"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="12_hpi2c"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="13_qiguf"]
-[ext_resource type="PackedScene" uid="uid://dmowyfjm7hk0u" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
+[ext_resource type="PackedScene" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="14_qv2ha"]
 [ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="15_2dvme"]
 [ext_resource type="PackedScene" uid="uid://dihndxp8ccslm" path="res://scenes/characters/BrutalHorse.tscn" id="17_fw7j0"]
