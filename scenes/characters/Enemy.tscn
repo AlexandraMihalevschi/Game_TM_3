@@ -1220,7 +1220,23 @@ position = Vector2(0, -72.0772)
 shape = SubResource("18")
 
 [node name="item_spawner" parent="." instance=ExtResource("3")]
-item_type = "Bandit Head"
+item_type = "Wood"
+amount = 3
+
+[node name="item_spawner2" parent="." instance=ExtResource("3")]
+item_type = "Iron"
+amount = 3
+
+[node name="item_spawner3" parent="." instance=ExtResource("3")]
+item_type = "Herb"
+
+[node name="item_spawner4" parent="." instance=ExtResource("3")]
+item_type = "Water"
+amount = 3
+
+[node name="item_spawner5" parent="." instance=ExtResource("3")]
+item_type = "Leather"
+amount = 3
 
 [connection signal="timeout" from="state_changer" to="." method="_on_state_changer_timeout"]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered" flags=3]

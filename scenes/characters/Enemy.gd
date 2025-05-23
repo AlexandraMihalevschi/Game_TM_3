@@ -129,7 +129,21 @@ func despawn():
 	var despawn_particles = despawn_fx.instantiate()
 	get_parent().add_child(despawn_particles)
 	despawn_particles.global_position = global_position
-	if has_node("item_spawner"):
-		get_node("item_spawner").spawn()
+	var count = randi() % 5
+	if count == 0:
+		if has_node("item_spawner"):
+			get_node("item_spawner").spawn()
+	elif count == 1:
+		if has_node("item_spawner5"):
+			get_node("item_spawner5").spawn()
+	elif count == 2:
+		if has_node("item_spawner2"):
+			get_node("item_spawner2").spawn()
+	elif count == 3:
+		if has_node("item_spawner3"):
+			get_node("item_spawner3").spawn()
+	else:
+		if has_node("item_spawner4"):
+			get_node("item_spawner4").spawn()
 	queue_free()
 	pass

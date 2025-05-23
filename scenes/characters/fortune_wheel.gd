@@ -13,10 +13,8 @@ var current_dialog = 0
 @export var spawn_item_after_dialogue := false # Toggle whether to spawn item after talking
 @export var despawn_after_item := false # Toggle whether to despawn after spawning item
 
-# Reference to the interaction prompt (if you have one)
-@onready var interaction_prompt = $InteractionPrompt
-@onready var sprite = $Sprite # Assuming you have a Sprite2D node for visual representation
-@onready var collision_shape = $CollisionShape2D # Reference to collision shape
+@onready var sprite = $sprite # Assuming you have a Sprite2D node for visual representation
+@onready var collision_shape = $StaticBody2D/CollisionShape2D # Reference to collision shape
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,12 +23,8 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 	
 	# Connect to the dialog box's signals if they exist
-	if Dialogs.dialog_box:
-		Dialogs.dialog_box.dialog_ended.connect(_on_dialog_ended)
 	
-	# Hide interaction prompt initially if it exists
-	if interaction_prompt:
-		interaction_prompt.hide()
+	
 
 func _input(event):
 	# Bail if npc not active (player not inside the collider)
@@ -59,16 +53,12 @@ func _input(event):
 func _on_body_entered(body):
 	if body is Player:
 		active = true
-		# Show interaction prompt if it exists
-		if interaction_prompt:
-			interaction_prompt.show()
+
 		
 func _on_body_exited(body):
 	if body is Player:
 		active = false
-		# Hide interaction prompt if it exists
-		if interaction_prompt:
-			interaction_prompt.hide()
+
 	
 @export var despawn_fx : PackedScene # Add this to assign your particle effect scene in the inspector
 
