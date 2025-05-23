@@ -20,3 +20,4 @@ filesystem_*
 editor_layout.cfg
 script_editor_cache.cfg
 create_recent.Node
+.godot/scene_groups_cache.cfg
