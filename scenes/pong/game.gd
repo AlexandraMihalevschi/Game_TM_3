@@ -11,7 +11,7 @@ var top_score: int = 0
 
 # Game state
 var game_over: bool = false
-const WINNING_SCORE: int = 10
+const WINNING_SCORE: int = 3
 
 func _ready():
 	print("=== GAME STARTING ===")
@@ -115,7 +115,8 @@ func check_game_over():
 
 func on_player_wins():
 	print("🎉 PLAYER WINS! Final Score - Player: ", bottom_score, " AI: ", top_score)
-	
+	Inventory.add_item("Game reward", 1)
+	get_tree().change_scene_to_file("res://scenes/levels/HouseInside.tscn")
 	# Stop the ball
 	if ball:
 		ball.velocity = Vector2.ZERO
