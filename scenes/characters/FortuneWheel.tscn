@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dihndxp8ccslm"]
+[gd_scene load_steps=8 format=3 uid="uid://dmowyfjm7hk0u"]
 
-[ext_resource type="Script" path="res://scenes/characters/brutal_horse.gd" id="1_xelvx"]
-[ext_resource type="Texture2D" uid="uid://bjdecdfj51g6a" path="res://textures/props/brutal_pony.png" id="2_yo4le"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_by8gt"]
-radius = 722.875
+[ext_resource type="Script" path="res://scenes/characters/fortune_wheel.gd" id="1_66lgh"]
+[ext_resource type="Texture2D" uid="uid://bqq7m4btf8uw8" path="res://textures/props/wheel.png" id="2_gr145"]
+[ext_resource type="PackedScene" uid="uid://ciy0fkc4qg14g" path="res://scenes/misc/ItemSpawner.tscn" id="3_5f5e1"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "idle"
@@ -41,24 +39,17 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(881, 436)
+size = Vector2(413, 258)
 
-[node name="BrutalHorse" type="Area2D"]
-script = ExtResource("1_xelvx")
-dialogs = [" I look at you and think, \"Two billion years of evolution, for this?\"", null, null, null, null]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibgmk"]
+radius = 161.524
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-1, -58)
-rotation = 1.58742
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-82.7531, -44.6309)
-shape = SubResource("CircleShape2D_by8gt")
+[node name="FortuneWheel" type="Area2D"]
+script = ExtResource("1_66lgh")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0.564087, 2.50995)
-texture = ExtResource("2_yo4le")
+texture = ExtResource("2_gr145")
 offset = Vector2(3.3446, -93.3282)
 
 [node name="anims" type="AnimationPlayer" parent="."]
@@ -68,5 +59,14 @@ libraries = {
 autoplay = "idle"
 
 [node name="trigger" type="CollisionShape2D" parent="."]
-position = Vector2(2, 306)
+position = Vector2(7.5, 21)
 shape = SubResource("2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -94)
+shape = SubResource("CircleShape2D_ibgmk")
+
+[node name="item_spawner" parent="." instance=ExtResource("3_5f5e1")]
+item_type = "Bostan's icon (?)"
