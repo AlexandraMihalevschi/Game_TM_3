@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dihndxp8ccslm"]
+[gd_scene load_steps=6 format=3 uid="uid://dihndxp8ccslm"]
 
-[ext_resource type="Script" path="res://scenes/characters/brutal_horse.gd" id="1_xelvx"]
+[ext_resource type="Script" uid="uid://cw8qo0d8tohnk" path="res://scenes/characters/brutal_horse.gd" id="1_xelvx"]
 [ext_resource type="Texture2D" uid="uid://bjdecdfj51g6a" path="res://textures/props/brutal_pony.png" id="2_yo4le"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_by8gt"]
-radius = 722.875
 
 [sub_resource type="Animation" id="1"]
 resource_name = "idle"
@@ -37,27 +34,18 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftf7t"]
 _data = {
-"idle": SubResource("1")
+&"idle": SubResource("1")
 }
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(881, 436)
+size = Vector2(292, 173.242)
 
 [node name="BrutalHorse" type="Area2D"]
 script = ExtResource("1_xelvx")
-dialogs = [" I look at you and think, \"Two billion years of evolution, for this?\"", null, null, null, null]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-1, -58)
-rotation = 1.58742
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-82.7531, -44.6309)
-shape = SubResource("CircleShape2D_by8gt")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(0.564087, 2.50995)
+position = Vector2(23, -51)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yo4le")
 offset = Vector2(3.3446, -93.3282)
 
@@ -68,5 +56,5 @@ libraries = {
 autoplay = "idle"
 
 [node name="trigger" type="CollisionShape2D" parent="."]
-position = Vector2(2, 306)
+position = Vector2(10, 74.621)
 shape = SubResource("2")

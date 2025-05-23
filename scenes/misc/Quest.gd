@@ -14,9 +14,9 @@ Otherwise you'll have to make a quest system a bit more complex.
 @export var quest_name: String = "Life as a Rappi Guy"
 
 @export var required_item: String = "Generic Item"
-@export var required_amount: int = 3
-@export var reward_item: String = "Ant Skull"
-@export var reward_amount: int = 2
+@export var required_amount: int = 10
+@export var reward_item: String = "Generic Reward"
+@export var reward_amount: int = 1
 
 @export var initial_text = "TLDR; bring me 10 thingies" # (String, MULTILINE)
 @export var pending_text = "You forgot? I want 10 thingies" # (String, MULTILINE)

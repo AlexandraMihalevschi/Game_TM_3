@@ -1,17 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://damx5ema0gns7"]
+[gd_scene load_steps=18 format=3 uid="uid://damx5ema0gns7"]
 
-[ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://1uxf77pkbdpp" path="res://scenes/props/MushroomBig.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://0ufegcjd2xrq" path="res://scenes/props/Grass.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://w47chxu5i2vb" path="res://scenes/misc/portal.tscn" id="3_wv1lb"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="4"]
-[ext_resource type="Script" path="res://scenes/misc/portal.gd" id="4_2udu8"]
+[ext_resource type="Script" uid="uid://n5sxjkux1xl1" path="res://scenes/misc/portal.gd" id="4_2udu8"]
 [ext_resource type="PackedScene" uid="uid://ciophcv17yxah" path="res://scenes/props/House.tscn" id="5"]
-[ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://scenes/props/Flower.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://1dchidafhsg8" path="res://scenes/misc/MusicTrack.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cgr2sfpgr4qe" path="res://scenes/props/Flower.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="8"]
-[ext_resource type="PackedScene" path="res://scenes/characters/Npc2.tscn" id="8_86ya3"]
-[ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://bplcnj6t3e3ku" path="res://scenes/props/MushroomSmall.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="11"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="12"]
@@ -57,14 +56,13 @@ character_name = "Jorgito"
 
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("14")]
 quest_name = "Life as a Delivery Guy"
+required_amount = 3
+reward_item = "Ant Skull"
 initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
 [node name="Character" parent="level" instance=ExtResource("8")]
 position = Vector2(1509.86, 2579.34)
-
-[node name="NPC2" parent="level" instance=ExtResource("8_86ya3")]
-position = Vector2(1162.98, 483.355)
 
 [node name="house" parent="level" instance=ExtResource("5")]
 position = Vector2(908.151, 406.509)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ba4mn4j3ir6s6"]
 
-[ext_resource type="Script" path="res://scenes/misc/Healthbar.gd" id="1"]
+[ext_resource type="Script" uid="uid://bktg4x3tgf635" path="res://scenes/misc/Healthbar.gd" id="1"]
 
 [node name="Healthbar" type="HBoxContainer"]
 offset_left = 8.0

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ba4mn4j3ir6s6" path="res://scenes/misc/Healthbar.tscn" id="4"]
 [ext_resource type="Texture2D" uid="uid://dwn5qf313j5en" path="res://textures/misc/btn-roll.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://dvjbkxvp6yxld" path="res://textures/misc/btn-interact.png" id="6"]
-[ext_resource type="Script" path="res://scenes/misc/TouchInterface.gd" id="7"]
+[ext_resource type="Script" uid="uid://btia5evhg5phm" path="res://scenes/misc/TouchInterface.gd" id="7"]
 [ext_resource type="BitMap" uid="uid://btqy1wgyliysp" path="res://textures/misc/btn-mask.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://v7wbqrihcdka" path="res://textures/misc/btn-slash.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://bf8tm281iqk3u" path="res://textures/misc/arrow.png" id="10"]

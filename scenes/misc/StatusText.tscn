@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://iu0aegkhj8po"]
 
 [ext_resource type="FontFile" path="res://fonts/stats.tres" id="1"]
-[ext_resource type="Script" path="res://scenes/misc/StatusText.gd" id="2"]
+[ext_resource type="Script" uid="uid://b7vo8ol7oshnr" path="res://scenes/misc/StatusText.gd" id="2"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "update"
@@ -46,7 +46,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jtjwp"]
 _data = {
-"update": SubResource("1")
+&"update": SubResource("1")
 }
 
 [node name="Status_text" type="Label"]

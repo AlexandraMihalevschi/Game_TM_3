@@ -27,12 +27,7 @@ var new_anim = ""
 enum { STATE_BLOCKED, STATE_IDLE, STATE_WALKING, STATE_ATTACK, STATE_ROLL, STATE_DIE, STATE_HURT }
 
 var state = STATE_IDLE
-var is_blocked = false
 
-func set_blocked(blocked: bool):
-	is_blocked = blocked
-	if blocked:
-		velocity = Vector2.ZERO
 # Move the player to the corresponding spawnpoint, if any and connect to the dialog system
 func _ready():
 	var spawnpoints = get_tree().get_nodes_in_group("spawnpoints")
@@ -48,8 +43,7 @@ func _ready():
 
 
 func _physics_process(_delta):
-	if is_blocked:
-		return
+	
 	## PROCESS STATES
 	match state:
 		STATE_BLOCKED:

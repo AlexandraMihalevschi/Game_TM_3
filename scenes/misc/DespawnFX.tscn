@@ -1,11 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://p04tf0awx6gv"]
 
-[ext_resource type="Script" path="res://scenes/characters/DespawnFx.gd" id="1"]
+[ext_resource type="Script" uid="uid://b8gqigrs4p4m6" path="res://scenes/characters/DespawnFx.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b84y1s4n0g87q" path="res://textures/pj/smoke_particle.png" id="2"]
 
 [sub_resource type="Curve" id="1"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 

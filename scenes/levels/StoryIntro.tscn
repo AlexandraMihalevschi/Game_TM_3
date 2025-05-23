@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://5vqvd17o7pvq"]
+
+[ext_resource type="Script" uid="uid://dujvyhsn3cdv" path="res://scenes/levels/StoryIntro.gd" id="2_j2bde"]
+
+[node name="StoryIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_j2bde")
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 453.0
+offset_right = 1083.0
+offset_bottom = 608.0
+
+[node name="StoryText" type="RichTextLabel" parent="TextBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 6.821
+anchor_bottom = 3.771
+offset_left = 38.0
+offset_top = 16.0
+offset_right = -6100.48
+offset_bottom = -474.505
+
+[node name="NextButton" type="Button" parent="TextBox"]
+layout_mode = 0
+offset_left = 946.0
+offset_top = 117.0
+offset_right = 1063.0
+offset_bottom = 169.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2sehpndnpyg5"]
 
-[ext_resource type="Script" path="res://singletons/Music.gd" id="1_wold4"]
+[ext_resource type="Script" uid="uid://djjar5y8ojy2f" path="res://singletons/Music.gd" id="1_wold4"]
 
 [sub_resource type="Animation" id="2"]
 tracks/0/type = "value"
@@ -108,9 +108,9 @@ length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y1x2n"]
 _data = {
-"AtoB": SubResource("2"),
-"BtoA": SubResource("3"),
-"pause": SubResource("4")
+&"AtoB": SubResource("2"),
+&"BtoA": SubResource("3"),
+&"pause": SubResource("4")
 }
 
 [node name="Music" type="Node"]

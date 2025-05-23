@@ -1,12 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3gcaj4vrpbko"]
+[gd_scene load_steps=18 format=3 uid="uid://c3gcaj4vrpbko"]
 
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="1_kg1ln"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="1_ufusx"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="2_nup0s"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2_ybluk"]
 [ext_resource type="PackedScene" uid="uid://w47chxu5i2vb" path="res://scenes/misc/portal.tscn" id="3_3gqm7"]
-[ext_resource type="PackedScene" path="res://scenes/characters/Npc2.tscn" id="3_nconh"]
-[ext_resource type="Script" path="res://scenes/misc/portal.gd" id="4_23nfp"]
+[ext_resource type="Script" uid="uid://n5sxjkux1xl1" path="res://scenes/misc/portal.gd" id="4_23nfp"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="5_4a05x"]
 [ext_resource type="PackedScene" uid="uid://dwu2tlrkse1kh" path="res://scenes/misc/Quest.tscn" id="6_yfav0"]
 [ext_resource type="PackedScene" uid="uid://ctd3mgp0s172q" path="res://scenes/characters/Player.tscn" id="7_qanbl"]
@@ -15,7 +14,6 @@
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="11_s66tv"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="12_hpi2c"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="13_qiguf"]
-[ext_resource type="PackedScene" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="14_qv2ha"]
 [ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="15_2dvme"]
 [ext_resource type="PackedScene" uid="uid://dihndxp8ccslm" path="res://scenes/characters/BrutalHorse.tscn" id="17_fw7j0"]
@@ -81,19 +79,13 @@ texture = ExtResource("2_nup0s")
 y_sort_enabled = true
 position = Vector2(208.024, -128.355)
 
-[node name="NPC2" parent="level" instance=ExtResource("3_nconh")]
-position = Vector2(333.976, 1174.35)
-
-[node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
-position = Vector2(1268.98, 518.355)
-dialogs = [" I look at you and think, \"Two billion years of evolution, for this?\"", "You are the human version of cramps.", "Let me tell you. If I don’t answer you the first time, what makes you think the next 25 will work?", "Careful, bug — I could sneeze and end your entire bloodline.", "They call me horsepower. You? Pest control bait."]
-
 [node name="Jorgito" parent="level" instance=ExtResource("5_4a05x")]
-position = Vector2(5101.98, 741.355)
+position = Vector2(5742.98, 805.355)
 character_name = "Jorgito"
 
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("6_yfav0")]
 quest_name = "Life as a Delivery Guy"
+required_amount = 3
 initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
@@ -169,6 +161,10 @@ position = Vector2(-574.024, 1210.35)
 [node name="grass16" parent="level" instance=ExtResource("10_jncih")]
 position = Vector2(-273.024, 3129.35)
 
+[node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
+position = Vector2(1325.98, 372.355)
+dialogs = ["Hello", "heloo2"]
+
 [node name="enemy" parent="level" instance=ExtResource("13_qiguf")]
 position = Vector2(2791.98, 1186.35)
 
@@ -188,7 +184,7 @@ position = Vector2(1435.98, 1509.35)
 position = Vector2(348.976, 943.355)
 
 [node name="enemy7" parent="level" instance=ExtResource("13_qiguf")]
-position = Vector2(1957.98, 650.355)
+position = Vector2(1766.1, 666.819)
 
 [node name="enemy8" parent="level" instance=ExtResource("13_qiguf")]
 position = Vector2(2446.6, 633.461)
@@ -235,20 +231,14 @@ position = Vector2(-1173.02, 1409.35)
 [node name="TreeLimiter" parent="level" instance=ExtResource("15_2dvme")]
 position = Vector2(-1114.02, 1734.35)
 
-[node name="FortuneWheel" parent="level" instance=ExtResource("14_n1m4e")]
-position = Vector2(3054.98, 2160.35)
-dialogs = ["Oh, hi! Hello! Want some luck checking? Let me just... Here... *spinning and spinning*... Let us see what is your prize today...", "Let me just take... a moment... of breath..."]
-spawn_item_after_dialogue = true
-
 [node name="music_track" parent="." instance=ExtResource("1_ufusx")]
 music_track = "res://music/310-world-map-loop.ogg"
 
 [node name="UI" parent="." instance=ExtResource("2_ybluk")]
 
 [node name="Portal" parent="." instance=ExtResource("3_3gqm7")]
-position = Vector2(-65, 819)
+position = Vector2(5303, 306)
 script = ExtResource("4_23nfp")
-to_scene = "res://scenes/levels/Outside.tscn"
 
 [node name="house_outside" type="Marker2D" parent="Portal" groups=["spawnpoints"]]
 position = Vector2(330, 351)

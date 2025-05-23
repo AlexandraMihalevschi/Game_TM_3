@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w47chxu5i2vb"]
 
 [ext_resource type="Texture2D" uid="uid://c227rrl5deh7c" path="res://textures/props/portal.png" id="1_gemxc"]
-[ext_resource type="Script" path="res://scenes/misc/Exit.gd" id="2_yc4yw"]
+[ext_resource type="Script" uid="uid://gt5qfyuyo8m7" path="res://scenes/misc/Exit.gd" id="2_yc4yw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7m0q"]
 size = Vector2(339, 390)

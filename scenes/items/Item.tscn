@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cdlubsc32hue6"]
 
 [ext_resource type="Texture2D" uid="uid://dswhkcoafxmtb" path="res://textures/item.png" id="1"]
-[ext_resource type="Script" path="res://scenes/items/Item.gd" id="2"]
+[ext_resource type="Script" uid="uid://b3taphvyqt7g2" path="res://scenes/items/Item.gd" id="2"]
 [ext_resource type="AudioStream" uid="uid://bkqm1wbxr2gg5" path="res://sounds/item_collected.wav" id="3"]
 
 [sub_resource type="CircleShape2D" id="1"]
@@ -154,9 +154,9 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5x1yl"]
 _data = {
-"collected": SubResource("2"),
-"reset": SubResource("3"),
-"spawn": SubResource("4")
+&"collected": SubResource("2"),
+&"reset": SubResource("3"),
+&"spawn": SubResource("4")
 }
 
 [node name="Item" type="Area2D" groups=["items"]]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://somuuw6qhxcw"]
 
-[ext_resource type="Script" path="res://scenes/misc/Stats.gd" id="1"]
+[ext_resource type="Script" uid="uid://bqcnb1b8cldto" path="res://scenes/misc/Stats.gd" id="1"]
 [ext_resource type="FontFile" path="res://fonts/dialog.tres" id="2"]
 [ext_resource type="FontFile" path="res://fonts/stats.tres" id="3"]
 [ext_resource type="StyleBox" uid="uid://bmwyr86qlg4lp" path="res://scenes/misc/stats.stylebox" id="4"]
