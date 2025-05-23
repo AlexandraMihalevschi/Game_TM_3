@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="2_nup0s"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2_ybluk"]
 [ext_resource type="PackedScene" uid="uid://w47chxu5i2vb" path="res://scenes/misc/portal.tscn" id="3_3gqm7"]
-[ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="3_nconh"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Npc2.tscn" id="3_nconh"]
 [ext_resource type="Script" path="res://scenes/misc/portal.gd" id="4_23nfp"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="5_4a05x"]
 [ext_resource type="PackedScene" uid="uid://dwu2tlrkse1kh" path="res://scenes/misc/Quest.tscn" id="6_yfav0"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="11_s66tv"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="12_hpi2c"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="13_qiguf"]
-[ext_resource type="PackedScene" uid="uid://dmowyfjm7hk0u" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
+[ext_resource type="PackedScene" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="14_qv2ha"]
 [ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="15_2dvme"]
 [ext_resource type="PackedScene" uid="uid://dihndxp8ccslm" path="res://scenes/characters/BrutalHorse.tscn" id="17_fw7j0"]
@@ -94,7 +94,6 @@ character_name = "Jorgito"
 
 [node name="Quest" parent="level/Jorgito" instance=ExtResource("6_yfav0")]
 quest_name = "Life as a Delivery Guy"
-required_amount = 3
 initial_text = "TLDR; bring me 3 Generic Items"
 pending_text = "You forgot? I want 3 Generic Items"
 
