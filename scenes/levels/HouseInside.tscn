@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddfr0xxi2hppu"]
+[gd_scene load_steps=16 format=3 uid="uid://ddfr0xxi2hppu"]
 
 [ext_resource type="Texture2D" uid="uid://bijef2y1b822l" path="res://textures/house_inside.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://bm63xna52012q" path="res://scenes/props/Table.tscn" id="3"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://c86h27dkrrlm7" path="res://scenes/characters/Npc2.tscn" id="8_rqqpm"]
+[ext_resource type="Script" path="res://scenes/levels/HouseExitTrigger.gd" id="9_gy5ly"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "idle"
@@ -50,6 +52,9 @@ size = Vector2(1412.42, 336.798)
 
 [sub_resource type="RectangleShape2D" id="3"]
 size = Vector2(1378.44, 314.398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7tcn"]
+size = Vector2(498.5, 100)
 
 [node name="HouseInside" type="Node"]
 
@@ -128,5 +133,15 @@ polygon = PackedVector2Array(-859.39, 362.047, -856.453, 670.362, 855.425, 676.2
 vertex_colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.831373, 0, 0, 0, 0.839216, 0, 0, 0, 0)
 
 [node name="UI" parent="." instance=ExtResource("7")]
+
+[node name="NPC2" parent="." instance=ExtResource("8_rqqpm")]
+position = Vector2(-338, 615)
+
+[node name="HouseExitTrigger" type="Area2D" parent="."]
+script = ExtResource("9_gy5ly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseExitTrigger"]
+position = Vector2(10, 451)
+shape = SubResource("RectangleShape2D_n7tcn")
 
 [editable path="house_inside/Dadbug"]

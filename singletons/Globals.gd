@@ -3,6 +3,9 @@ extends Node
 # warning-ignore:unused_class_variable
 var spawnpoint = ""
 var current_level = ""
+var npc2_joined = false
+var npc2_met_in_house = false  # Track if player already spoke to NPC2
+var npc2_following = false 
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color.WHITE)
