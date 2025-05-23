@@ -9,8 +9,8 @@ var crafting_recipes = {
 	"Iron Armor": {"Iron": 5, "Leather": 2},
 	"Iron Sword": {"Wood": 2, "Iron": 5},
 	"Advanced health Potion": {"Herb": 5, "Water": 2},
-	#"Advanced Magic Sword": {"Herb": 0, "Iron":0, "Leather":0, "Ant Skull": 0, "Game Reward":0}
-	"Advanced Magic Sword": {"Herb": 4, "Iron":6, "Leather":5, "Ant Skull": 1, "Game Reward":1}
+	"Advanced Magic Sword": {"Herb": 0, "Iron":0, "Leather":0, "Ant Skull": 0, "Game Reward":0}
+	#"Advanced Magic Sword": {"Herb": 4, "Iron":6, "Leather":5, "Ant Skull": 1, "Game Reward":1}
 }
 
 var numbered_recipes = {}  # Will store the numbered recipes for reference
