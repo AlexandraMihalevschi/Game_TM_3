@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://c3gcaj4vrpbko"]
+[gd_scene load_steps=20 format=3 uid="uid://c3gcaj4vrpbko"]
 
 [ext_resource type="Texture2D" uid="uid://bwgyo0qknm6gt" path="res://textures/props/puddle_big.png" id="1_kg1ln"]
 [ext_resource type="PackedScene" path="res://scenes/misc/MusicTrack.tscn" id="1_ufusx"]
 [ext_resource type="Texture2D" uid="uid://cgd2njb3hg82" path="res://textures/props/puddle_small.png" id="2_nup0s"]
 [ext_resource type="PackedScene" uid="uid://deqgnj30xx13t" path="res://scenes/misc/UI.tscn" id="2_ybluk"]
 [ext_resource type="PackedScene" uid="uid://w47chxu5i2vb" path="res://scenes/misc/portal.tscn" id="3_3gqm7"]
+[ext_resource type="PackedScene" uid="uid://bt18wdqv04f6w" path="res://scenes/characters/Npc2.tscn" id="3_nconh"]
 [ext_resource type="Script" path="res://scenes/misc/portal.gd" id="4_23nfp"]
 [ext_resource type="PackedScene" uid="uid://ccandeiq2816e" path="res://scenes/characters/Npc.tscn" id="5_4a05x"]
 [ext_resource type="PackedScene" uid="uid://dwu2tlrkse1kh" path="res://scenes/misc/Quest.tscn" id="6_yfav0"]
@@ -14,7 +15,7 @@
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomBig.tscn" id="11_s66tv"]
 [ext_resource type="PackedScene" path="res://scenes/props/MushroomSmall.tscn" id="12_hpi2c"]
 [ext_resource type="PackedScene" uid="uid://bycx5snr304xk" path="res://scenes/characters/Enemy.tscn" id="13_qiguf"]
-[ext_resource type="PackedScene" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
+[ext_resource type="PackedScene" uid="uid://dmowyfjm7hk0u" path="res://scenes/characters/FortuneWheel.tscn" id="14_n1m4e"]
 [ext_resource type="PackedScene" uid="uid://cdlubsc32hue6" path="res://scenes/items/Item.tscn" id="14_qv2ha"]
 [ext_resource type="PackedScene" uid="uid://bncf20j7xwun6" path="res://scenes/misc/tree_limiter.tscn" id="15_2dvme"]
 [ext_resource type="PackedScene" uid="uid://dihndxp8ccslm" path="res://scenes/characters/BrutalHorse.tscn" id="17_fw7j0"]
@@ -79,6 +80,9 @@ texture = ExtResource("2_nup0s")
 [node name="level" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(208.024, -128.355)
+
+[node name="NPC2" parent="level" instance=ExtResource("3_nconh")]
+position = Vector2(333.976, 1174.35)
 
 [node name="BrutalHorse" parent="level" instance=ExtResource("17_fw7j0")]
 position = Vector2(1268.98, 518.355)
